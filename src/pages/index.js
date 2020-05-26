@@ -6,13 +6,21 @@ import { css } from "@emotion/core";
 import AspectRatio from "../components/AspectRatio";
 import BookmarkArticle from "../components/BookmarkArticle";
 
-const RootIndex = (props) => {
-  const siteTitle = props.data.site.siteMetadata.title;
-  const article = {
-    title: "Virtual Reality",
-    category: { name: "Technology", color: "#F0F0F0" },
-    img: { src: "https://placekitten.com/200/300", alt: "Kitty!" },
-  };
+const articles = (data) => {
+  return data.allContentfulArticle.nodes.map((article) => {
+    const images = article.images.map((image) => ({ src: image.file.url }));
+
+    return {
+      title: article.title,
+      category: { name: article.category.name, color: article.category.color },
+      images: images,
+      description: article.description.description,
+    };
+  });
+};
+
+const RootIndex = ({ data }) => {
+  const siteTitle = data.site.siteMetadata.title;
 
   return (
     <div
@@ -26,7 +34,9 @@ const RootIndex = (props) => {
           rel="stylesheet"
         />
       </Helmet>
-      <BookmarkArticle article={article} />
+      {articles(data).map((article) => (
+        <BookmarkArticle article={article} />
+      ))}
     </div>
   );
 };
@@ -38,6 +48,27 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    allContentfulArticle {
+      nodes {
+        title
+        description {
+          description
+        }
+        images {
+          fluid(maxWidth: 2000) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+          file {
+            url
+          }
+        }
+        category {
+          color
+          name
+        }
       }
     }
   }

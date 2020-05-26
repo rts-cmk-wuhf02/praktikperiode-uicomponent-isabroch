@@ -1,6 +1,7 @@
 import React from "react";
 import AspectRatio from "./AspectRatio";
 import { css } from "@emotion/core";
+import { Title } from "./Title";
 
 const Bookmark = (props) => (
   <svg
@@ -21,7 +22,7 @@ const Bookmark = (props) => (
 );
 
 const BookmarkArticle = ({ article }) => {
-  const { title, img, category } = article;
+  const { title, images, category } = article;
   return (
     <AspectRatio maxWidth="370px" ratio={1} background="white" rounded>
       <article
@@ -57,11 +58,11 @@ const BookmarkArticle = ({ article }) => {
             margin-top: auto;
           `}
         >
-          {category.name}
+          <Title color={category.color}>{category.name}</Title>
         </span>
         <img
-          src={img.src || "http://placehold.it/300"}
-          alt={img.alt || ""}
+          src={images[0].src || "http://placehold.it/300"}
+          alt={images[0].alt || ""}
           css={css`
             opacity: 0.5;
             position: absolute;
