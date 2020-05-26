@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import "../components/reset.css";
 import { css } from "@emotion/core";
+import AspectRatio from "../components/AspectRatio";
 
 const RootIndex = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
@@ -14,7 +15,15 @@ const RootIndex = (props) => {
       `}
     >
       <Helmet title={siteTitle} />
-      Text
+      <AspectRatio
+        ratio={16 / 9}
+        background="yellow"
+        rounded
+        imgFit="cover"
+        maxSize={{ width: "200px" }}
+      >
+        <img src="http://placehold.it/1000" alt="" />
+      </AspectRatio>
     </div>
   );
 };
