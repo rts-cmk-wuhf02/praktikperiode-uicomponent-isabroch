@@ -16,11 +16,11 @@ const RootIndex = (props) => {
     >
       <Helmet title={siteTitle} />
       <AspectRatio
-        width={16}
-        height={9}
+        ratio={16 / 9}
         background="yellow"
         rounded
         imgFit="cover"
+        maxSize={{ width: "200px" }}
       >
         <img src="http://placehold.it/1000" alt="" />
       </AspectRatio>
