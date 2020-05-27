@@ -3,7 +3,7 @@ import AspectRatio from "./AspectRatio";
 import { css } from "@emotion/core";
 import { Title } from "./Title";
 import { Card } from "./Card";
-import { Img } from "gatsby-image";
+import Img from "gatsby-image";
 
 const Bookmark = (props) => (
   <svg
@@ -75,8 +75,13 @@ const BookmarkArticle = ({ article: { title, images, category } }) => {
           <span css={cssCategory}>
             <Title color={category.color}>{category.name}</Title>
           </span>
-          <img src={images[0].file.url} alt="" css={cssBackgroundImage} />
-          {/* <Img fluid={images[0].fluid} css={cssBackgroundImage} /> */}
+          <Img
+            fluid={images[0].fluid}
+            style={{
+              display: "absolute",
+            }} /* gatsby image inlines position relative. */
+            css={cssBackgroundImage}
+          />
         </article>
       </AspectRatio>
     </Card>

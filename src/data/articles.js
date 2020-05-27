@@ -19,10 +19,7 @@ export const query = graphql`
     }
     images {
       fluid(maxWidth: 2000) {
-        ...GatsbyContentfulFluid_tracedSVG
-      }
-      file {
-        url
+        ...GatsbyContentfulFluid
       }
     }
     category {

@@ -13,6 +13,7 @@ const RatioCard = ({
     padding-top: ${100 / ratio}%;
     background: ${background};
     position: relative;
+    overflow: hidden;
   `;
 
   const cssContent = css`

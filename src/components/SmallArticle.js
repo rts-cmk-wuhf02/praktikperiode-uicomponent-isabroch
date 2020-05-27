@@ -13,8 +13,7 @@ export const SmallArticle = ({
   return (
     <Card maxWidth="370px" maxHeight="470px">
       <AspectRatio imgFit="cover" ratio={372 / 236}>
-        <img src={images[0].file.url} alt="" />
-        {/* <Img fluid={images[0].fluid} /> */}
+        <Img fluid={images[0].fluid} />
       </AspectRatio>
       text
     </Card>
