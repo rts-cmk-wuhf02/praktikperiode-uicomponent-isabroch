@@ -75,7 +75,8 @@ const BookmarkArticle = ({ article: { title, images, category } }) => {
           <span css={cssCategory}>
             <Title color={category.color}>{category.name}</Title>
           </span>
-          <Img fluid={images[0].fluid} css={cssBackgroundImage} />
+          <img src={images[0].file.url} alt="" css={cssBackgroundImage} />
+          {/* <Img fluid={images[0].fluid} css={cssBackgroundImage} /> */}
         </article>
       </AspectRatio>
     </Card>
