@@ -4,7 +4,7 @@ import { css } from "@emotion/core";
 export const Title = ({
   children,
   color = "white",
-  spacing = 200,
+  spacing = 150,
   size = "11px",
 }) => (
   <span
