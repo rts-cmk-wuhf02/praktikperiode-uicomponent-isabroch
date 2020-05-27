@@ -49,9 +49,12 @@ const BookmarkArticle = ({
   `;
 
   const cssCategory = css`
-    padding: 0 5px 2px 7px;
     align-self: flex-end;
     margin-top: auto;
+  `;
+
+  const cssTextBG = css`
+    padding: 2px 5px 2px 7px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
   `;
@@ -75,9 +78,22 @@ const BookmarkArticle = ({
         <article css={cssContent}>
           <Bookmark css={cssBookmarkPosition} />
           <Title>
-            <h1 css={cssTitle}>{title}</h1>
+            <h1
+              css={css`
+                ${cssTextBG}
+                ${cssTitle}
+              `}
+            >
+              {title}
+            </h1>
           </Title>
-          <Subtitle css={cssCategory} color={category.color}>
+          <Subtitle
+            css={css`
+              ${cssCategory}
+              ${cssTextBG}
+            `}
+            color={category.color}
+          >
             {category.name}
           </Subtitle>
           <Img
