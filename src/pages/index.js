@@ -3,27 +3,27 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import "../components/reset.css";
 import { css } from "@emotion/core";
-import AspectRatio from "../components/AspectRatio";
+import BookmarkArticle from "../components/BookmarkArticle";
+import { articles } from "../data/articles";
 
-const RootIndex = (props) => {
-  const siteTitle = props.data.site.siteMetadata.title;
+const RootIndex = ({ data }) => {
+  const siteTitle = data.site.siteMetadata.title;
 
   return (
     <div
       css={css`
-        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
       `}
     >
-      <Helmet title={siteTitle} />
-      <AspectRatio
-        ratio={16 / 9}
-        background="yellow"
-        rounded
-        imgFit="cover"
-        maxSize={{ width: "200px" }}
-      >
-        <img src="http://placehold.it/1000" alt="" />
-      </AspectRatio>
+      <Helmet title={siteTitle}>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
+      {articles(data).map((article) => (
+        <BookmarkArticle article={article} />
+      ))}
     </div>
   );
 };
@@ -35,6 +35,12 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    allContentfulArticle {
+      nodes {
+        ...ArticleFragment
       }
     }
   }

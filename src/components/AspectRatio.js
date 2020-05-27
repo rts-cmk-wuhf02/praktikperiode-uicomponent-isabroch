@@ -4,7 +4,8 @@ import { css } from "@emotion/core";
 const RatioCard = ({
   children,
   ratio = 1 / 1,
-  maxSize = { width: "initial", height: "initial" },
+  maxWidth = "initial",
+  maxHeight = "initial",
   background = "white",
   rounded = false,
   imgFit = "contain",
@@ -14,8 +15,8 @@ const RatioCard = ({
   return (
     <div
       css={css`
-        max-width: ${maxSize.width};
-        max-height: ${maxSize.height};
+        max-width: ${maxWidth};
+        max-height: ${maxHeight};
       `}
     >
       <div
