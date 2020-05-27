@@ -54,8 +54,11 @@ const BookmarkArticle = ({ article }) => {
         </h1>
         <span
           css={css`
-            text-align: right;
+            padding: 0 5px 2px 7px;
+            align-self: flex-end;
             margin-top: auto;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
           `}
         >
           <Title color={category.color}>{category.name}</Title>
