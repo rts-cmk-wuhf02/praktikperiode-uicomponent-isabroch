@@ -10,6 +10,7 @@ export const Card = ({
   className,
 }) => {
   const cssWrapper = css`
+    overflow: hidden;
     background: ${background};
     max-width: ${maxWidth};
     max-height: ${maxHeight};

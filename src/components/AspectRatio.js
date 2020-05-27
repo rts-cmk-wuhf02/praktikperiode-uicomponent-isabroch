@@ -10,7 +10,6 @@ const RatioCard = ({
 }) => {
   const cssWrapper = css`
     height: 0;
-    overflow: hidden;
     padding-top: ${100 / ratio}%;
     background: ${background};
     position: relative;
