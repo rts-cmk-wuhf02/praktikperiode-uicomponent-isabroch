@@ -7,6 +7,7 @@ export const Card = ({
   maxHeight = "initial",
   background = "white",
   rounded = true,
+  colSpan = 1,
   className,
 }) => {
   const cssWrapper = css`
@@ -15,6 +16,7 @@ export const Card = ({
     max-width: ${maxWidth};
     max-height: ${maxHeight};
     border-radius: ${rounded ? 10 : 0}px;
+    grid-column: span ${colSpan};
   `;
 
   return <div css={cssWrapper}>{children}</div>;

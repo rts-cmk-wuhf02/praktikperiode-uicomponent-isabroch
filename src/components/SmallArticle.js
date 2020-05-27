@@ -7,11 +7,12 @@ import Img from "gatsby-image";
 
 export const SmallArticle = ({
   article: { title, images, category, description },
+  colSpan = 4,
 }) => {
   const style = {};
 
   return (
-    <Card maxWidth="370px" maxHeight="470px">
+    <Card colSpan={colSpan}>
       <AspectRatio imgFit="cover" ratio={372 / 236}>
         <Img fluid={images[0].fluid} />
       </AspectRatio>

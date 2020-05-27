@@ -23,7 +23,10 @@ const Bookmark = (props) => (
   </svg>
 );
 
-const BookmarkArticle = ({ article: { title, images, category } }) => {
+const BookmarkArticle = ({
+  article: { title, images, category },
+  colSpan = 4,
+}) => {
   const cssContent = css`
     position: relative;
     box-sizing: border-box;
@@ -67,7 +70,7 @@ const BookmarkArticle = ({ article: { title, images, category } }) => {
   `;
 
   return (
-    <Card rounded maxWidth="370px">
+    <Card colSpan={colSpan} rounded>
       <AspectRatio ratio={1} background="white">
         <article css={cssContent}>
           <Bookmark css={cssBookmarkPosition} />
@@ -77,9 +80,8 @@ const BookmarkArticle = ({ article: { title, images, category } }) => {
           </span>
           <Img
             fluid={images[0].fluid}
-            style={{
-              display: "absolute",
-            }} /* gatsby image inlines position relative. */
+            /* Must use this method to override gatsby-image inline relative positioning */
+            style={{ position: "absolute" }}
             css={cssBackgroundImage}
           />
         </article>

@@ -12,13 +12,19 @@ const RootIndex = ({ data }) => {
   const articleData = articles(data);
 
   const style = {
-    font: css`
+    base: css`
       font-family: "Montserrat", sans-serif;
+      background: #eaeaea;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 30px;
+      align-items: flex-start;
     `,
   };
 
   return (
-    <div css={style.font}>
+    <div css={style.base}>
       <Helmet title={siteTitle}>
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap"
