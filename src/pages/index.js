@@ -5,25 +5,28 @@ import "../components/reset.css";
 import { css } from "@emotion/core";
 import BookmarkArticle from "../components/BookmarkArticle";
 import { articles } from "../data/articles";
+import { SmallArticle } from "../components/SmallArticle";
 
 const RootIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
+  const articleData = articles(data);
+
+  const style = {
+    font: css`
+      font-family: "Montserrat", sans-serif;
+    `,
+  };
 
   return (
-    <div
-      css={css`
-        font-family: "Montserrat", sans-serif;
-      `}
-    >
+    <div css={style.font}>
       <Helmet title={siteTitle}>
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap"
           rel="stylesheet"
         />
       </Helmet>
-      {articles(data).map((article) => (
-        <BookmarkArticle article={article} />
-      ))}
+      <BookmarkArticle article={articleData[0]} />
+      <SmallArticle article={articleData[1]} />
     </div>
   );
 };
