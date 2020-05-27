@@ -4,53 +4,39 @@ import { css } from "@emotion/core";
 const RatioCard = ({
   children,
   ratio = 1 / 1,
-  maxWidth = "initial",
-  maxHeight = "initial",
   background = "white",
-  rounded = false,
   imgFit = "contain",
   className,
 }) => {
+  const cssWrapper = css`
+    height: 0;
+    padding-top: ${100 / ratio}%;
+    background: ${background};
+    position: relative;
+    overflow: hidden;
+  `;
+
+  const cssContent = css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    > img {
+      height: 100%;
+      width: 100%;
+      display: block;
+      object-fit: ${imgFit};
+    }
+  `;
+
   // https://css-tricks.com/aspect-ratio-boxes/
   return (
-    <div
-      css={css`
-        max-width: ${maxWidth};
-        max-height: ${maxHeight};
-      `}
-    >
-      <div
-        className={className}
-        css={css`
-          border-radius: ${rounded ? 10 : 0}px;
-          height: 0;
-          overflow: hidden;
-          padding-top: ${100 / ratio}%;
-          background: ${background};
-          position: relative;
-        `}
-      >
-        <div
-          css={css`
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-
-            > img {
-              height: 100%;
-              width: 100%;
-              display: block;
-              object-fit: ${imgFit};
-            }
-          `}
-        >
-          {children}
-        </div>
-      </div>
+    <div className={className} css={cssWrapper}>
+      <div css={cssContent}>{children}</div>
     </div>
   );
 };

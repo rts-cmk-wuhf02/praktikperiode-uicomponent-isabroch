@@ -2,12 +2,10 @@ import { graphql } from "gatsby";
 
 export const articles = (data) => {
   return data.allContentfulArticle.nodes.map((article) => {
-    const images = article.images.map((image) => ({ src: image.file.url }));
-
     return {
       title: article.title,
       category: { name: article.category.name, color: article.category.color },
-      images: images,
+      images: article.images,
       description: article.description.description,
     };
   });
@@ -21,10 +19,7 @@ export const query = graphql`
     }
     images {
       fluid(maxWidth: 2000) {
-        ...GatsbyContentfulFluid_tracedSVG
-      }
-      file {
-        url
+        ...GatsbyContentfulFluid
       }
     }
     category {
