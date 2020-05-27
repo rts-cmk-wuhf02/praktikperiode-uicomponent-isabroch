@@ -20,6 +20,10 @@ const RootIndex = ({ data }) => {
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 30px;
       align-items: flex-start;
+      margin: 0 auto;
+      max-width: 1280px;
+      box-sizing: border-box;
+      padding: 30px;
     `,
   };
 
@@ -27,7 +31,7 @@ const RootIndex = ({ data }) => {
     <div css={style.base}>
       <Helmet title={siteTitle}>
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"
           rel="stylesheet"
         />
       </Helmet>
