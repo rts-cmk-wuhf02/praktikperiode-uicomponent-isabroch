@@ -1,7 +1,7 @@
 import React from "react";
 import AspectRatio from "./AspectRatio";
 import { css } from "@emotion/core";
-import { Title } from "./Title";
+import { Subtitle, Title } from "./Text";
 import { Card } from "./Card";
 import Img from "gatsby-image";
 
@@ -74,10 +74,12 @@ const BookmarkArticle = ({
       <AspectRatio ratio={1} background="white">
         <article css={cssContent}>
           <Bookmark css={cssBookmarkPosition} />
-          <h1 css={cssTitle}>{title}</h1>
-          <span css={cssCategory}>
-            <Title color={category.color}>{category.name}</Title>
-          </span>
+          <Title>
+            <h1 css={cssTitle}>{title}</h1>
+          </Title>
+          <Subtitle css={cssCategory} color={category.color}>
+            {category.name}
+          </Subtitle>
           <Img
             fluid={images[0].fluid}
             /* Must use this method to override gatsby-image inline relative positioning */
