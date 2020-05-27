@@ -30,7 +30,7 @@ const RootIndex = ({ data }) => {
     >
       <Helmet title={siteTitle}>
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap"
           rel="stylesheet"
         />
       </Helmet>
