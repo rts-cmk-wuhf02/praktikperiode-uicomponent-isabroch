@@ -45,8 +45,9 @@ export const Title = ({
         font-size: ${size};
         font-weight: 700;
         color: ${color};
-        line-height: 1.4;
-        padding: ${padding ? "0.5em 0" : "0"};
+        line-height: 1.2;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+        padding: ${padding ? "0.55em 0" : "0"};
       `}
     >
       {children}
