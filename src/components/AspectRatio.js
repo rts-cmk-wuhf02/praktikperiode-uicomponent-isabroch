@@ -1,10 +1,10 @@
 import React from "react";
 import { css } from "@emotion/core";
 
-const RatioCard = ({
+const AspectRatio = ({
   children,
   ratio = 1 / 1,
-  background = "white",
+  background = "transparent",
   imgFit = "contain",
   className,
   rounded = false,
@@ -47,4 +47,4 @@ const RatioCard = ({
   );
 };
 
-export default RatioCard;
+export default AspectRatio;
