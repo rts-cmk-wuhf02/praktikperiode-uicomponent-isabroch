@@ -16,7 +16,7 @@ export const SmallArticle = ({
   };
 
   return (
-    <Card colSpan={colSpan}>
+    <Card colSpan={colSpan} vAlign="stretch">
       <AspectRatio imgFit="cover" ratio={372 / 236}>
         <Img fluid={images[0].fluid} />
       </AspectRatio>

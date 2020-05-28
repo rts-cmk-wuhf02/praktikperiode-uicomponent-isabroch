@@ -55,7 +55,7 @@ export const LargeArticle = ({
   };
 
   return (
-    <Card colSpan={colSpan}>
+    <Card colSpan={colSpan} vAlign="stretch">
       <article css={style.wrapper}>
         <Img fluid={images[0].fluid} css={style.mainImage} />
 
