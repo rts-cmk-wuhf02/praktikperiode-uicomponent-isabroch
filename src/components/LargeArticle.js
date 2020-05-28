@@ -5,7 +5,7 @@ import { Subtitle, Title, Blurb } from "./Text";
 import { Card } from "./Card";
 import Img from "gatsby-image";
 
-const ExtraImages = ({ images }) => {
+const ExtraImages = ({ images, className }) => {
   const imageElements = [];
   // Get MAX 3 pictures
   for (let i = 1; i < images.length || i <= 3; i++) {
@@ -22,7 +22,7 @@ const ExtraImages = ({ images }) => {
   if (imageElements.length === 0) {
     return null;
   }
-  return imageElements;
+  return <div className={className}>{imageElements}</div>;
 };
 
 export const LargeArticle = ({
@@ -82,14 +82,8 @@ export const LargeArticle = ({
           <Blurb lines={4} color="#7B8591">
             {description}
           </Blurb>
-          <div css={style.extraImages}>
-            <ExtraImages
-              images={images}
-              css={css`
-                margin-top: auto;
-              `}
-            />
-          </div>
+
+          <ExtraImages images={images} css={style.extraImages} />
         </div>
       </article>
     </Card>
