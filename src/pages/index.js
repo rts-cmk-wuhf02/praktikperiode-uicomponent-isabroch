@@ -18,9 +18,10 @@ const RootIndex = ({ data }) => {
       background: #eaeaea;
       min-height: 100vh;
       display: grid;
+      grid-auto-flow: dense;
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 30px;
-      align-items: stretch;
+      align-items: flex-start;
       margin: 0 auto;
       max-width: 1280px;
       box-sizing: border-box;
@@ -41,8 +42,6 @@ const RootIndex = ({ data }) => {
         <>
           <SmallArticle article={article} />
           <LargeArticle article={article} />
-          <BookmarkArticle article={article} />
-          <BookmarkArticle article={article} />
           <BookmarkArticle article={article} />
         </>
       ))}
