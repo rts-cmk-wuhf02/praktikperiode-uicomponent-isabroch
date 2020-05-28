@@ -22,7 +22,9 @@ export const SmallArticle = ({
       </AspectRatio>
       <article css={style.content}>
         <div>
-          <Subtitle color={category.color}>{category.name}</Subtitle>
+          <Subtitle color={category.color} align="left">
+            {category.name}
+          </Subtitle>
         </div>
         <Title size="m" padding>
           <h1>{title}</h1>
