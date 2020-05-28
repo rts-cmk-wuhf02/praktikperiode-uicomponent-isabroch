@@ -22,8 +22,7 @@ export const Card = ({
       grid-column: span ${colSpan};
       align-self: ${vAlign};
       grid-row: span ${rowSpan};
-      box-shadow: 0 1.8px 2.8px rgba(0, 0, 0, 0.05),
-        0 3px 13px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 1.8px 5px rgba(0, 0, 0, 0.1), 0 3px 20px rgba(0, 0, 0, 0.05);
     `,
   };
   return (
