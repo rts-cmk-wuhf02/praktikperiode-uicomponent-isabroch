@@ -7,10 +7,11 @@ import Img from "gatsby-image";
 
 const ExtraImages = ({ images }) => {
   const imageElements = [];
-  for (let i = 1; i < images.length; i++) {
+  // Get MAX 3 pictures
+  for (let i = 1; i < images.length || i <= 3; i++) {
     if (images[i]) {
       const element = (
-        <AspectRatio imgFit="cover" ratio={1 / 1} rounded>
+        <AspectRatio imgFit="cover" ratio={1 / 1} key={images[i].id} rounded>
           <Img fluid={images[i].fluid} />
         </AspectRatio>
       );
