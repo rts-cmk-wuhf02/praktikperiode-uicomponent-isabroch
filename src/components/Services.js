@@ -17,7 +17,7 @@ export const Services = ({ service }) => {
     icon: css`
       align-self: flex-end;
       margin-bottom: auto;
-      flex: 0 0 4vmax;
+      flex: 0 0 25%;
     `,
     title: css`
       margin: 0.5em 0;
