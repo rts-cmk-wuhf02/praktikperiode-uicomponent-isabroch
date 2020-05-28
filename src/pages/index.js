@@ -6,6 +6,7 @@ import { css } from "@emotion/core";
 import BookmarkArticle from "../components/BookmarkArticle";
 import { articles } from "../data/articles";
 import { SmallArticle } from "../components/SmallArticle";
+import { LargeArticle } from "../components/LargeArticle";
 
 const RootIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -39,6 +40,7 @@ const RootIndex = ({ data }) => {
         <>
           <BookmarkArticle article={article} />
           <SmallArticle article={article} />
+          <LargeArticle article={article} />
         </>
       ))}
     </div>
