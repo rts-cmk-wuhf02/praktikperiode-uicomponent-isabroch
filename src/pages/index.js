@@ -38,13 +38,15 @@ const RootIndex = ({ data }) => {
           rel="stylesheet"
         />
       </Helmet>
-      {articleData.map((article) => (
-        <>
-          <SmallArticle article={article} />
-          <LargeArticle article={article} />
-          <BookmarkArticle article={article} />
-        </>
-      ))}
+      {articleData.map((article) => {
+        return (
+          <React.Fragment key={article.slug}>
+            <SmallArticle article={article} />
+            <LargeArticle article={article} />
+            <BookmarkArticle article={article} />
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 };
