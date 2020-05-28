@@ -1,64 +1,47 @@
-# Contentful Gatsby Starter Blog
+# praktikperiode-uicomponents
 
-Create a [Gatsby](http://gatsbyjs.com/) blog powered by [Contentful](https://www.contentful.com). This is a simplified version of the [Gatsby Contentful Starter](https://github.com/contentful-userland/gatsby-contentful-starter) which is maintained by our Community.
+![](https://github.com/rts-cmk-opgaver/praktikperiode-uicomponents/blob/master/hero.jpg)
 
-![The index page of the starter blog](https://rawgit.com/contentful-userland/gatsby-contentful-starter/master/screenshot.jpg "The index page of the starter blog")
+## Opgavebeskrivelse
 
-Static sites are scalable, secure and have very little required maintenance. They come with a drawback though. Not everybody feels good editing files, building a project and uploading it somewhere. This is where Contentful comes into play.
+I den kommende praktikperiode skal i arbejde med **React** og **Contenful**. Der skal udvikles en kollektion af UI komponenter.<br>
+Kompenterne skal udvikles i ReactJS og komponenternes indhold som ex. tekster, billeder etc. skal hostes på platformen contentful. De færdige komponenterne skal præsenteres i en React applikation på samme måde som de også er præstenteret i design filen.
 
-With Contentful and Gatsby you can connect your favorite static site generator with an API that provides an easy to use interface for people writing content and automate the publishing using services like [Travis CI](https://travis-ci.org/) or [Netlify](https://www.netlify.com/).
+**Github**<br>
 
-## Features
+1.  Der **skal pushes dagligt**, så du har en backup online i tilfælde af computer nedbrud og andet.
+2.  De enkelte komponenter **skal udvikles på selvstændige branches**.
+3.  Der **skal foretages et merge til master** når et komponenet er færdigt.
 
-- Simple content model and structure. Easy to adjust to your needs.
-- Use the [synchronization feature](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization) of our [Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/).
-- Responsive/adaptive images via [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) and our [Images API](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization/initial-synchronization-of-entries-of-a-specific-content-type).
+**Komponenter**<br>
+Ved første øjekast ligner flere komponenter hinanden, men det er ikke helt tilfældet når man kikker lidt nærmere. Det kan være små forskelle som fx. farven på en overskrift som differentiere. Nogen komponenter er såkaldte sub-komponenter fordi de bruges inde i andre komponenter. Andre komponenter er interaktive fordi der er funktionakitet som "like", galleri eller view more integreret.
 
-## Getting started
+**Start med at**<br>
+Analysere komponenterne og gå herefter igang med at udvikle de komponenter der udgør sub-komponenter. Det er vigtigt at du sikre dig at enkelte "elementer" ikke udvikles mere end én gang! Går noget igen, er der _formentligt_ et komponent...
 
-See our [official Contentful getting started guide](https://www.contentful.com/developers/docs/tutorials/general/get-started/).
+## Formål
 
-### Get the source code and install dependencies.
+Opgavens formål er at opbygge en vis rutine og erfaring i de arbejdsgang som du er blevet præsenteret for og har arbejdet med i sidste skoleperiode, og som er nødvendige for at arbejde effektivt eller med andre ord – smartere :)
 
-```
-$ git clone https://github.com/contentful/starter-gatsby-blog.git
-$ npm install
-```
+![Alt Text](https://github.com/rts-cmk-opgaver/praktikperiode-uicomponents/blob/master/giphy.gif)
 
-Or use the [Gatsby CLI](https://www.npmjs.com/package/gatsby-cli).
+## Varighed
 
-```
-$ gatsby new contentful-starter-blog https://github.com/contentful/starter-gatsby-blog/
-```
+Du har 8 arbejdsdage til at løse praktikopgaven.
 
-### Set up of the needed content model and create a configuration file
+## Applikation tech stack
 
-This project comes with a Contentful setup command `npm run setup`.
+ReactJS<br>
+CSS in JS<br>
+Contentful<br>
+Github (deployment)<br>
 
-This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write a config file (`./.contentful.json`).
+## Matrialer
 
-`npm run setup` automates that for you but if you want to do it yourself rename `.contentful.json.sample` to `.contentful.json` and add your configuration in this file.
+Du skal downloade XD filen herfra: https://bit.ly/2Xkqsbm
 
-## Crucial Commands
+## Aflevering
 
-### `npm run dev`
-
-Run the project locally with live reload in development mode.
-
-### `npm run build`
-
-Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
-
-### `npm run serve`
-
-Spin up a production-ready server with your blog. Don't forget to build your page beforehand.
-
-## Deployment
-
-See the [official Contentful getting started guide](https://www.contentful.com/developers/docs/tutorials/general/get-started/).
-
-## Contribution
-
-Feel free to open pull requests to fix bugs. If you want to add features, please have a look at the [original version](https://github.com/contentful-userland/gatsby-contentful-starter). It is always open to contributions and pull requests.
-
-You can learn more about how Contentful userland is organized by visiting [our about repository](https://github.com/contentful-userland/about).
+Aflevering torsdag d. 4 Juni.<br>
+Du har afleveret når din applikation er hostet på github pages og linket hertil er sat ind herunder.<br><br>
+**Projekt url:** Skriv din github pages adresse her!!!
