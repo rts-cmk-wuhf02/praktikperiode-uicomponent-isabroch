@@ -44,7 +44,8 @@ export const Title = ({
   const sizeFontsizeDict = {
     s: "18px",
     m: "25px",
-    l: "48px",
+    l: "35px",
+    xl: "45px",
   };
 
   size = sizeFontsizeDict[size.toLowerCase()];
