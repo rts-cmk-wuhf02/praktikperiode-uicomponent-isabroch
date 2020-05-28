@@ -8,7 +8,7 @@ import Img from "gatsby-image";
 const ExtraImages = ({ images, className }) => {
   const imageElements = [];
   // Get MAX 3 pictures
-  for (let i = 1; i < images.length || i <= 3; i++) {
+  for (let i = 1; i < images.length && i <= 3; i++) {
     if (images[i]) {
       const element = (
         <AspectRatio imgFit="cover" ratio={1 / 1} key={images[i].id} rounded>
