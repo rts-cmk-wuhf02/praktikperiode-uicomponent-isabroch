@@ -21,11 +21,9 @@ export const SmallArticle = ({
         <Img fluid={images[0].fluid} />
       </AspectRatio>
       <article css={style.content}>
-        <div>
-          <Subtitle color={category.color} align="left">
-            {category.name}
-          </Subtitle>
-        </div>
+        <Subtitle color={category.color} align="left">
+          {category.name}
+        </Subtitle>
         <Title size="m" padding>
           <h1>{title}</h1>
         </Title>
