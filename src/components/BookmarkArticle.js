@@ -42,22 +42,19 @@ const BookmarkArticle = ({
     top: 0;
   `;
 
-  const cssTitle = css`
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-  `;
-
   const cssCategory = css`
-    padding: 0 5px 2px 7px;
     align-self: flex-end;
     margin-top: auto;
+  `;
+
+  const cssTextBG = css`
+    padding: 4px 8px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
   `;
 
   const cssBackgroundImage = css`
-    opacity: 0.5;
+    /* opacity: 0.5; */
     position: absolute;
     top: 0;
     left: 0;
@@ -74,10 +71,22 @@ const BookmarkArticle = ({
       <AspectRatio ratio={1} background="white">
         <article css={cssContent}>
           <Bookmark css={cssBookmarkPosition} />
-          <Title>
-            <h1 css={cssTitle}>{title}</h1>
+          <Title
+            css={css`
+              ${cssTextBG}
+            `}
+            size="m"
+            align="center"
+          >
+            <h1>{title}</h1>
           </Title>
-          <Subtitle css={cssCategory} color={category.color}>
+          <Subtitle
+            css={css`
+              ${cssCategory}
+            `}
+            padding
+            color={category.color}
+          >
             {category.name}
           </Subtitle>
           <Img

@@ -35,8 +35,12 @@ const RootIndex = ({ data }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <BookmarkArticle article={articleData[1]} />
-      <SmallArticle article={articleData[1]} />
+      {articleData.map((article) => (
+        <>
+          <BookmarkArticle article={article} />
+          <SmallArticle article={article} />
+        </>
+      ))}
     </div>
   );
 };
