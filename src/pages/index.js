@@ -22,7 +22,7 @@ const RootIndex = ({ data }) => {
       grid-gap: 30px;
       align-items: flex-start;
       margin: 0 auto;
-      max-width: 1000px;
+      max-width: 1300px;
       box-sizing: border-box;
       padding: 30px;
     `,
