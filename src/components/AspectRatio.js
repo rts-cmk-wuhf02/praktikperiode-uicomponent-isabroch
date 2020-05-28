@@ -7,6 +7,7 @@ const RatioCard = ({
   background = "white",
   imgFit = "contain",
   className,
+  rounded = false,
 }) => {
   const cssWrapper = css`
     height: 0;
@@ -14,6 +15,7 @@ const RatioCard = ({
     background: ${background};
     position: relative;
     overflow: hidden;
+    border-radius: ${rounded ? "10px" : "0"};
   `;
 
   const cssContent = css`
