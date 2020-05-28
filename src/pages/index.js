@@ -20,11 +20,12 @@ const RootIndex = ({ data }) => {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 30px;
-      align-items: flex-start;
+      align-items: stretch;
       margin: 0 auto;
       max-width: 1280px;
       box-sizing: border-box;
       padding: 30px;
+      color: #303336;
     `,
   };
 
@@ -38,9 +39,11 @@ const RootIndex = ({ data }) => {
       </Helmet>
       {articleData.map((article) => (
         <>
-          <BookmarkArticle article={article} />
           <SmallArticle article={article} />
           <LargeArticle article={article} />
+          <BookmarkArticle article={article} />
+          <BookmarkArticle article={article} />
+          <BookmarkArticle article={article} />
         </>
       ))}
     </div>
