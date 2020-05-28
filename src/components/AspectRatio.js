@@ -31,6 +31,10 @@ const RatioCard = ({
       display: block;
       object-fit: ${imgFit};
     }
+
+    .gatsby-image-wrapper {
+      height: 100%;
+    }
   `;
 
   // https://css-tricks.com/aspect-ratio-boxes/
