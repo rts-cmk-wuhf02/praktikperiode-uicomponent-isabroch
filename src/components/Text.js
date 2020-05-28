@@ -6,11 +6,21 @@ export const Subtitle = ({
   color = "white",
   spacing = 150,
   size = "11px",
+  background = "rgba(255, 255, 255, 0.8)",
+  align = "center",
   className,
+  minwidth = "100px",
+  padding = false,
 }) => (
   <div
     className={className}
     css={css`
+      box-sizing: border-box;
+      padding: ${padding ? "8px 16px" : "0"};
+      text-align: ${align};
+      min-width: ${minwidth};
+      background: ${background};
+      border-radius: 15px;
       font-weight: 800;
       font-size: ${size};
       text-transform: uppercase;
@@ -28,6 +38,7 @@ export const Title = ({
   size = "L",
   color = "inherit",
   className,
+  align = "left",
   padding = false,
 }) => {
   const sizeFontsizeDict = {
@@ -42,6 +53,7 @@ export const Title = ({
     <div
       className={className}
       css={css`
+        text-align: ${align};
         font-size: ${size};
         font-weight: 700;
         color: ${color};
