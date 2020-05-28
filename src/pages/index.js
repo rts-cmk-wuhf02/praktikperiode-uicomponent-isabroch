@@ -5,13 +5,14 @@ import "../styles/reset.css";
 import "../styles/global.css";
 import { css } from "@emotion/core";
 import BookmarkArticle from "../components/BookmarkArticle";
-import { articles } from "../data/articles";
 import { SmallArticle } from "../components/SmallArticle";
 import { LargeArticle } from "../components/LargeArticle";
+import { articles } from "../data/articles";
+import { services } from "../data/services";
+import { Services } from "../components/Services";
 
 const RootIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const articleData = articles(data);
 
   const style = {
     base: css`
@@ -21,7 +22,7 @@ const RootIndex = ({ data }) => {
       grid-gap: 30px;
       align-items: flex-start;
       margin: 0 auto;
-      max-width: 1000px;
+      max-width: 1300px;
       box-sizing: border-box;
       padding: 30px;
     `,
@@ -35,15 +36,18 @@ const RootIndex = ({ data }) => {
           rel="stylesheet"
         />
       </Helmet>
-      {articleData.map((article) => {
-        return (
-          <React.Fragment key={article.slug}>
-            <SmallArticle article={article} />
-            <LargeArticle article={article} />
-            <BookmarkArticle article={article} />
-          </React.Fragment>
-        );
-      })}
+      {services(data).map((service) => (
+        <React.Fragment key={service.id}>
+          <Services service={service} />
+        </React.Fragment>
+      ))}
+      {articles(data).map((article) => (
+        <React.Fragment key={article.slug}>
+          <SmallArticle article={article} />
+          <LargeArticle article={article} />
+          <BookmarkArticle article={article} />
+        </React.Fragment>
+      ))}
     </div>
   );
 };
@@ -61,6 +65,12 @@ export const pageQuery = graphql`
     allContentfulArticle {
       nodes {
         ...ArticleFragment
+      }
+    }
+
+    allContentfulService {
+      nodes {
+        ...ServiceFragment
       }
     }
   }
