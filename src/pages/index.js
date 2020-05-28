@@ -1,11 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
-import "../components/reset.css";
+import "../styles/reset.css";
+import "../styles/global.css";
 import { css } from "@emotion/core";
 import BookmarkArticle from "../components/BookmarkArticle";
 import { articles } from "../data/articles";
 import { SmallArticle } from "../components/SmallArticle";
+import { LargeArticle } from "../components/LargeArticle";
 
 const RootIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -13,15 +15,13 @@ const RootIndex = ({ data }) => {
 
   const style = {
     base: css`
-      font-family: "Montserrat", sans-serif;
-      background: #eaeaea;
-      min-height: 100vh;
       display: grid;
+      grid-auto-flow: dense;
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 30px;
       align-items: flex-start;
       margin: 0 auto;
-      max-width: 1280px;
+      max-width: 1000px;
       box-sizing: border-box;
       padding: 30px;
     `,
@@ -35,12 +35,15 @@ const RootIndex = ({ data }) => {
           rel="stylesheet"
         />
       </Helmet>
-      {articleData.map((article) => (
-        <>
-          <BookmarkArticle article={article} />
-          <SmallArticle article={article} />
-        </>
-      ))}
+      {articleData.map((article) => {
+        return (
+          <React.Fragment key={article.slug}>
+            <SmallArticle article={article} />
+            <LargeArticle article={article} />
+            <BookmarkArticle article={article} />
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 };
