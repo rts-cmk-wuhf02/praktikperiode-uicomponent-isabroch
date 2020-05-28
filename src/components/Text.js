@@ -6,7 +6,7 @@ export const Subtitle = ({
   color = "white",
   spacing = 150,
   size = "11px",
-  background = "rgba(255, 255, 255, 0.8)",
+  background = "default",
   align = "center",
   className,
   minwidth = "100px",
@@ -19,7 +19,9 @@ export const Subtitle = ({
       padding: ${padding ? "8px 16px" : "0"};
       text-align: ${align};
       min-width: ${minwidth};
-      background: ${background};
+      background: ${background === "default"
+        ? "rgba(255, 255, 255, 0.8)"
+        : background};
       border-radius: 15px;
       font-weight: 800;
       font-size: ${size};
@@ -27,6 +29,9 @@ export const Subtitle = ({
       color: ${color};
       letter-spacing: ${spacing / 1000}em;
       line-height: 1.4;
+      text-shadow: ${background === "default"
+        ? "1px 1px 1px rgba(255, 255, 255, 0.8)"
+        : "none"};
     `}
   >
     {children}
