@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
-import "../components/reset.css";
+import "../styles/reset.css";
+import "../styles/global.css";
 import { css } from "@emotion/core";
 import BookmarkArticle from "../components/BookmarkArticle";
 import { articles } from "../data/articles";
@@ -14,19 +15,15 @@ const RootIndex = ({ data }) => {
 
   const style = {
     base: css`
-      font-family: "Montserrat", sans-serif;
-      background: #eaeaea;
-      min-height: 100vh;
       display: grid;
       grid-auto-flow: dense;
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 30px;
       align-items: flex-start;
       margin: 0 auto;
-      max-width: 1280px;
+      max-width: 1000px;
       box-sizing: border-box;
       padding: 30px;
-      color: #303336;
     `,
   };
 
