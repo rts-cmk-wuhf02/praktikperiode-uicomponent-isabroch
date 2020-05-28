@@ -8,6 +8,7 @@ export const Card = ({
   background = "white",
   rounded = true,
   colSpan = 1,
+  rowSpan = 1,
   className,
 }) => {
   const style = {
@@ -18,9 +19,14 @@ export const Card = ({
       max-height: ${maxHeight};
       border-radius: ${rounded ? 10 : 0}px;
       grid-column: span ${colSpan};
+      grid-row: span ${rowSpan};
       box-shadow: 0 1.8px 2.8px rgba(0, 0, 0, 0.05),
         0 3px 13px rgba(0, 0, 0, 0.03);
     `,
   };
-  return <div css={style.card}>{children}</div>;
+  return (
+    <div {...className} css={style.card}>
+      {children}
+    </div>
+  );
 };
