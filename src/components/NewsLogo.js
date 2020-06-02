@@ -44,6 +44,7 @@ export const NewsLogo = ({ size = 40, color = "black" }) => {
         `}
       />{" "}
       <Subtitle
+        background="transparent"
         color={color}
         css={css`
           padding: 0 1em;
