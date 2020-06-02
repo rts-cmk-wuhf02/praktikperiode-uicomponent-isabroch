@@ -10,6 +10,7 @@ import { LargeArticle } from "../components/LargeArticle";
 import { articles } from "../data/articles";
 import { services } from "../data/services";
 import { Services } from "../components/Services";
+import { Slider, Slide } from "../components/Slider";
 
 const RootIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -36,11 +37,19 @@ const RootIndex = ({ data }) => {
           rel="stylesheet"
         />
       </Helmet>
+
       {services(data).map((service) => (
         <React.Fragment key={service.id}>
           <Services service={service} />
         </React.Fragment>
       ))}
+
+      <Slider>
+        <Slide article={articles(data)[0]}></Slide>
+        <Slide article={articles(data)[1]}></Slide>
+        <Slide article={articles(data)[2]}></Slide>
+      </Slider>
+
       {articles(data).map((article) => (
         <React.Fragment key={article.slug}>
           <SmallArticle article={article} />

@@ -1,0 +1,15 @@
+.flickity-enabled {
+  height: 100%;
+}
+
+.flickity-page-dots {
+  bottom: 25px;
+}
+
+.flickity-page-dots .dot {
+  background: white;
+  width: 20px;
+  height: 2px;
+  border-radius: 4px;
+  margin: 0 2px;
+}
