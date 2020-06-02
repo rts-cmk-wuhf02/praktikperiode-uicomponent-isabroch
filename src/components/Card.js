@@ -14,6 +14,7 @@ export const Card = ({
 }) => {
   const style = {
     card: css`
+      position: relative;
       overflow: hidden;
       background: ${background};
       max-width: ${maxWidth};
